@@ -1,0 +1,95 @@
+mappings:
+- match: '*.*.executor.filesystem.*.*'
+  name: filesystem_usage
+  labels:
+    application: $1
+    executor_id: $2
+    fs_type: $3
+    qty: $4
+
+- match: '*.*.jvm.*.*'
+  name: jvm_memory_usage
+  labels:
+    application: $1
+    executor_id: $2
+    mem_type: $3
+    qty: $4
+
+- match: '*.*.executor.jvmGCTime.count'
+  name: jvm_gcTime_count
+  labels:
+    application: $1
+    executor_id: $2
+
+- match: '*.*.jvm.pools.*.*'
+  name: jvm_memory_pools
+  labels:
+    application: $1
+    executor_id: $2
+    mem_type: $3
+    qty: $4
+
+- match: '*.*.executor.threadpool.*'
+  name: executor_tasks
+  labels:
+    application: $1
+    executor_id: $2
+    qty: $3
+
+- match: '*.*.BlockManager.*.*'
+  name: block_manager
+  labels:
+    application: $1
+    executor_id: $2
+    type: $3
+    qty: $4
+
+- match: '*.*.DAGScheduler.*.*'
+  name: dag_scheduler
+  labels:
+    application: $1
+    executor_id: $2
+    type: $3
+    qty: $4
+
+- match: '*.*.CodeGenerator.*.*'
+  name: code_generator
+  labels:
+    application: $1
+    executor_id: $2
+    type: $3
+    qty: $4
+
+
+- match: '*.*.HiveExternalCatalog.*.*'
+  name: hive_external_catalog
+  labels:
+    application: $1
+    executor_id: $2
+    type: $3
+    qty: $4
+
+- match: '*.*.*.StreamingMetrics.*.*'
+  name: streaming_metrics
+  labels:
+    application: $1
+    executor_id: $2
+    app_name: $3
+    type: $4
+    qty: $5
+
+- match: '*.*.NettyBlockTransfer.*.*'
+  name: netty_block_transfer
+  labels:
+    application: $1
+    executor_id: $2
+    type: $3
+    qty: $4
+
+- match: '*.*.executor.*.*'
+  name: spark_executor
+  labels:
+    application: $1
+    executor_id: $2
+    type: $3
+    qty: $4
